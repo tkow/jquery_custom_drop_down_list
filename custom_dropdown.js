@@ -13,7 +13,6 @@ var CustomDropDown =(function($){
 
   CustomDropDown.prototype.set = function(){
     // this.to_delete = this.get_current_values();
-
     $(this.drop_down_list).each(function(i, drop_down) {
     var length = $(this.options).length;
     var j = 0;
@@ -21,8 +20,8 @@ var CustomDropDown =(function($){
       $(drop_down).val($(this.options)[j].value);
       j++;
     } 
-    this.reload();
     }.bind(this));
+    this.reload();
   }
   // 注意：jqueryオブジェクトと配列オブジェクトではfilterメソッドの引数指定が違う。jqueryのメソッドではインデクサ実装のオブジェクトは全て「配列のようなオブジェクト」で返り値が返ってくる。
   CustomDropDown.prototype._check_value = function(drop_down){
@@ -32,9 +31,10 @@ var CustomDropDown =(function($){
   CustomDropDown.prototype.reload = function(){
     this.to_delete = this.get_current_values();
     $(this.drop_down_list).each(function(i,drop_down){
-      var selected_val = $(drop_down).val();
-      $(drop_down).html(this.filter(drop_down));
-      $(drop_down).val(selected_val || $(drop_down).children('option').first().attr('value'));
+      var cache =$(drop_down);
+      var selected_val = cache.val();
+      cache.html(this.filter(drop_down));
+      cache.val(selected_val || cache.children('option:first').attr('value'));
     }.bind(this));
   }
 
@@ -42,7 +42,7 @@ var CustomDropDown =(function($){
     var options = $(this.options);
     $(this.to_delete).each(function(i,value){     
       if(this._delete_option_flg(value,drop_down,force_flag)){
-        options = options.filter(function(i,v){return $(v).val() !==value;});
+        options = options.filter(function(j,v){return $(v).val() !==value;});
       }
     }.bind(this));
     return this.additional_filter(options,drop_down);
@@ -101,9 +101,7 @@ var CustomDropDown =(function($){
   
   CustomDropDown.prototype.get_current_values = function(delete_option){
    return $(this.drop_down_list).map(function(i,v){ 
-    console.log($(v).prop('value'));
     return $(v).prop('value');
-
   });
   }
   
