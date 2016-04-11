@@ -2,7 +2,6 @@
 This js file enables you to use drop down lists with options restrected  singleton choise.
 # Usage
 
-
 ```javascript
 //examples
 for(var i =0;i<3;i++){
@@ -20,7 +19,6 @@ var selects = $('.hoge');
 dropdowns.set(selects,options);
 //reload method use dom manipulation when changing options 
 selects.change(dropdowns.reload.bind(selects));
-
 
 // if add_button and delete_button exist
 
