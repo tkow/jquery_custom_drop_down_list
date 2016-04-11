@@ -29,7 +29,7 @@ $('.add_button').click(function(){
   selects.set();
 });
 
-$('.add_button').click(function(){
+$('.delete_button').click(function(){
   some_process();
 //After some process like dom-removing runs for example $('<select class="hoge"></select>').appendTo('body');
 //All you need is set dropdownlists on selects.drop_down_list and call CustomDropDown.prototype.set()
