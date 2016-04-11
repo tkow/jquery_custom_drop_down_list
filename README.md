@@ -9,7 +9,10 @@ for(var i =0;i<3;i++){
   $('<select class="hoge"></select>').appendTo('body');
 }
 
-var options =$(["value1","value2","value3","value4"]).each(function(i,v){ return '<option value='+i+'>'+v+'</option>';});
+var options =$(["value1","value2","value3","value4"]).each(function(i,v){
+    return '<option value='+i+'>'+v+'</option>';
+  });
+  
 var dropdowns = new CustomDropDown(select,options);
 var selects = $('.hoge');
 
