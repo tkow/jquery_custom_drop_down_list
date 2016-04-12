@@ -55,5 +55,6 @@ I want to follow code bellow in near future.
 
 ```javascript
 selects.push(dropdown);
-// #=> This code will be same "selects.drop_down_list.push(dropdown);" and dropdown type can be string or jQueryDomObject 
+// #=> This code will be same "selects.drop_down_list.push(dropdown);" 
+// and dropdown type can be string or jQueryDomObject 
 ```
