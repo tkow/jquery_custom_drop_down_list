@@ -51,9 +51,9 @@ selects.additional_filter = function(option_doms,dropdown){
 If you request some additional feature or want to know this code, Please take it easy to question me.
 
 #Future Work (Unimplemented)
-I want to follow bellow code in near future.
+I want to follow code bellow in near future.
 
-'''javascript
+```javascript
 selects.push(dropdown);
 // #=> This code will be same "selects.drop_down_list.push(dropdown);" and dropdown type can be string or jQueryDomObject 
-'''
+```
