@@ -1,7 +1,7 @@
 # jquery_custom_drop_down_list
 This jQuery plugin enables you to use drop down lists with options restrected with singleton choise.
 # Usage
-
+require jQuery
 ```javascript
 //examples
 for(var i =0;i<3;i++){
@@ -26,7 +26,7 @@ $('.add_button').click(function(){
   some_process();
 //After some process like dom-appending runs for example $('<select class="hoge"></select>').appendTo('body');
 //All you need is  set dropdownlists on selects.drop_down_list and call CustomDropDown.prototype.set()
-  selects.drop_down_list = $(".field_before");
+  selects.drop_down_list = $(".your_dropdowns");
   selects.set();
 });
 
@@ -34,7 +34,7 @@ $('.delete_button').click(function(){
   some_process();
 //After some process like dom-removing runs for example $('<select class="hoge"></select>').appendTo('body');
 //All you need is set dropdownlists on selects.drop_down_list and call CustomDropDown.prototype.set()
-  selects.drop_down_list = $(".field_before");
+  selects.drop_down_list = $(".your_dropdowns");
   selects.set();
 });
 
@@ -44,6 +44,8 @@ $('.delete_button').click(function(){
 // additional_filter function can filter options whichever you like.
 // Return option_doms after some dom manipulation.
 selects.additional_filter = function(option_doms,dropdown){
+  some_process(option_doms);
   return option_doms;
 }
 ```
+If you request some additional feature or want to know this code, Please take it easy to question me.
