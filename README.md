@@ -39,3 +39,11 @@ $('.delete_button').click(function(){
 });
 
 ```
+#additional feature
+```javascript
+// additional_filter function can filter options whichever you like.
+// Return option_doms after some dom manipulation.
+selects.additional_filter = function(option_doms,dropdown){
+  return option_doms;
+}
+```
