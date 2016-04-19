@@ -12,11 +12,13 @@ var options =$(["value1","value2","value3","value4"]).each(function(i,v){
     return '<option value='+i+'>'+v+'</option>';
   });
   
-var dropdowns = new CustomDropDown(select,options);
-var selects = $('.hoge');
 
-//initialize
-dropdowns.set(selects,options);
+var selects = $('.hoge');
+var dropdowns = new CustomDropDown(selects,options);//constructor
+
+//You can also initialize as fllows.
+//dropdowns.set(selects,options);
+
 //reload method use dom manipulation when changing options 
 selects.change(dropdowns.reload.bind(selects));
 
@@ -26,16 +28,16 @@ $('.add_button').click(function(){
   some_process();
 //After some process like dom-appending runs for example $('<select class="hoge"></select>').appendTo('body');
 //All you need is  set dropdownlists on selects.drop_down_list and call CustomDropDown.prototype.set()
-  selects.drop_down_list = $(".your_dropdowns");
-  selects.set();
+  dropdowns.drop_down_list = $(".your_dropdowns");
+  dropdowns.set();
 });
 
 $('.delete_button').click(function(){
   some_process();
 //After some process like dom-removing runs for example $('<select class="hoge"></select>').appendTo('body');
 //All you need is set dropdownlists on selects.drop_down_list and call CustomDropDown.prototype.set()
-  selects.drop_down_list = $(".your_dropdowns");
-  selects.set();
+  dropdowns.drop_down_list = $(".your_dropdowns");
+  dropdowns.set();
 });
 
 ```
@@ -54,7 +56,7 @@ If you request some additional feature or want to know this code, Please take it
 I want to follow code bellow in near future.
 
 ```javascript
-selects.push(dropdown);
+dropdowns.push(dropdown);
 // #=> This code will be same "selects.drop_down_list.push(dropdown);" 
 // and dropdown type can be string or jQueryDomObject 
 ```
